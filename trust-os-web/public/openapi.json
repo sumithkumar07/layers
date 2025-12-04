@@ -1,0 +1,102 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Verification result",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "is_true": {
+                                        "type": "boolean"
+                                    },
+                                    "confidence": {
+                                        "type": "number"
+                                    },
+                                    "sources": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "/memory/add": {
+        "post": {
+            "operationId": "addMemory",
+            "summary": "Store a memory in the Vault",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "text": {
+                                    "type": "string",
+                                    "description": "The information to store"
+                                }
+                            },
+                            "required": [
+                                "text"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Memory stored successfully"
+                }
+            }
+        }
+    },
+    "/image/verify": {
+        "post": {
+            "operationId": "verifyImage",
+            "summary": "Analyze an image for manipulation (VeriSnap)",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "image_url": {
+                                    "type": "string",
+                                    "description": "URL of the image to analyze"
+                                }
+                            },
+                            "required": [
+                                "image_url"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Forensic analysis result"
+                }
+            }
+        }
+    }
+}
+}

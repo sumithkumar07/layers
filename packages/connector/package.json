@@ -1,0 +1,21 @@
+{
+    "name": "trust-os-connector",
+    "version": "0.1.0",
+    "description": "MCP Connector for Layers Platform",
+    "bin": {
+        "trust-os-connector": "./bin/trust-os-connector.js"
+    },
+    "scripts": {
+        "start": "node bin/trust-os-connector.js"
+    },
+    "keywords": [
+        "mcp",
+        "claude",
+        "layers"
+    ],
+    "author": "Layers Team",
+    "license": "MIT",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^0.6.0"
+    }
+}

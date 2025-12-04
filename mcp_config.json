@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "layers-verification": {
+      "command": "python",
+      "args": [
+        "c:/Users/sumit/OneDrive/Desktop/projects/layers/src/mcp_server.py"
+      ]
+    }
+  }
+}
