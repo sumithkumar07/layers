@@ -66,7 +66,8 @@ async def deduct_credits(user_id: str, amount: int, action: str):
                 or "no user" in error_msg 
                 or "users_id_fkey" in error_msg  # Specific FK constraint on user_id
                 or ("foreign key" in error_msg and "users" in error_msg and '"id"' in error_msg)  # More specific: quoted column name
-            ):                logger.error(f"User not found for credit deduction: {user_id}")
+            ):
+                logger.error(f"User not found for credit deduction: {user_id}")
                 raise HTTPException(status_code=404, detail="User not found for billing")
 
             else:
